@@ -1,0 +1,19 @@
+- Spectral Subtraction hohes Alpha und hoher Exponent
+    -> Noise reduziert, Sprache bewahrt, viel Musical Noise introduced
+
+- Unterteilen der Frequenzbänder in Subbänder
+    -> Ein Block des Subbands x besteht aus Sxn-n, ... Sxn Fenstern
+    -> Block klassifizieren als Rauschen/Sprache (evtl. mehr Models)
+    -> Neuronales Netz nehmen weils cool ist
+    -> Werte der Frequenzbins im Block als Features?
+    -> Sonst Bilden von statistischen Features wie Varianz
+    -> Generierung von Trainingssamples aus gefilterten Daten
+    -> Voice Activity Detection bevor Filterung -> Eindeutige Rausch und eindeutige Sprachpassagen identifizieren
+    -> Nach Filterung mit aus den Passagen generierten Blöcken trainieren
+    -> Model
+    -> Fortan nach dem Filtern Klassifikation aller Blöcke als Rauschen/Sprache
+    -> Reduktion von als Rauschen klassifizierter Blöcke
+    -> Ne Menge Smoothing, vor allem am Rand der als Rauschen klassifizierten Blöcke
+    -> Dauert ewig und hoffentlich Musical Noise reduziert
+    -> eventuell vortrainiertes Netz und finetunen pro Sample?
+    -> Entfernen von vorher als rauschen identifizierter Passagen geht eh, es geht aber um die Frequenzabschnitte während der Sprache, die entfernt wreden sollten.
